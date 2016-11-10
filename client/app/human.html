@@ -1,0 +1,19 @@
+<div class="container">
+    <hr>
+    <h3>Enter a name</h3>
+    <input type="text" name="name" [(ngModel)]="name" />
+    <h3>Enter an age</h3>
+    <input type="number" name="age" [(ngModel)]="age" />
+    <br><br>
+    <button (click)="addHuman()">Add a human</button>
+</div>
+<div class="humans">
+    <li *ngFor="let human of humans">{{human.name}} {{human.age}}
+        <button (click)="removeHuman(human._id)">Delete human</button>
+        <button (click)="viewHuman(human._id)">View human</button>
+    </li>
+</div>
+<div class="specific">
+    {{specificHumanAge}}
+    {{specificHumanName}}
+</div>
